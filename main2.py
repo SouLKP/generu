@@ -527,16 +527,17 @@ with st.sidebar.form(key='pdf_upload_form', clear_on_submit=True):
     radio = st.radio(label="Select Resume Format", options=['code', 'web'], horizontal=True)
     submit_button = st.form_submit_button(label='Generate Resume', on_click=None)
 
-# # if st.button("Generate Resume",type='primary'):
-# if submit_button:    
-#     if resume1 is not None:
-#         directory_path = os.path.join('/home/webclues/Music/HR_Gen_3/dataset1/resume_enhancer1',resume1.name)
-#         os.makedirs(directory_path,exist_ok=True)
-#         file_path = os.path.join(directory_path,resume1.name)
+# if st.button("Generate Resume",type='primary'):
+if submit_button:    
+    if resume1 is not None:
+        directory_path = os.path.join(path_1,resume1.name)
+        st.write(directory_path)
+        os.makedirs(directory_path,exist_ok=True)
+        file_path = os.path.join(directory_path,resume1.name)
 #         st.session_state.directory_path = directory_path
-#         with open(file_path, "wb") as f:
-#             f.write(resume1.getbuffer())
-#         engine = first_query_engine(directory_path)
+        with open(file_path, "wb") as f:
+            f.write(resume1.getbuffer())
+        # engine = first_query_engine(directory_path)
 
 #         st.session_state.allow1 = True
 #         st.session_state.allow2 = True 
