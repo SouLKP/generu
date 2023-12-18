@@ -1,4 +1,6 @@
 import streamlit as st
+from exceptions import PendingDeprecationWarning
+from builtins import PendingDeprecationWarning
 
 st.title('Resume Enhancer')
 
