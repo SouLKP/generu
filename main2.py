@@ -110,14 +110,23 @@ load_dotenv()
 import os
 OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
 OPENAI_API_KEY = st.secrets["OPENAI_API_KEY"]
-st.write('op in chat')
-# def first_query_engine(directory_path):
-#     llm = OpenAI(temperature=0.1, model="gpt-3.5-turbo-16k", max_tokens=5000, timeout= 300) 
-#     service_context = ServiceContext.from_defaults(llm=llm) 
-#     documents = SimpleDirectoryReader(directory_path).load_data()  
-#     index1 = VectorStoreIndex.from_documents(documents, service_context=service_context) 
-#     query_engine1 = index1.as_query_engine() 
-#     return query_engine1
+def first_query_engine(directory_path):
+    llm = OpenAI(temperature=0.1, model="gpt-3.5-turbo-16k", max_tokens=5000, timeout= 300) 
+    service_context = ServiceContext.from_defaults(llm=llm) 
+    documents = SimpleDirectoryReader(directory_path).load_data()  
+    index1 = VectorStoreIndex.from_documents(documents, service_context=service_context) 
+    query_engine1 = index1.as_query_engine() 
+    return query_engine1
+
+import shutil
+current_path = os.getcwd()
+st.write(current_path)
+path_1 = os.path.join(current_path, 'resume_enhancer1')
+path_2 = os.path.join(current_path,'output')
+os.makedirs(path_1, exist_ok=True)
+os.makedirs(path_2,exist_ok=True)
+
+# full_path = os.path.join(save_path, resume1.name)
 
 # import re
 # from docx import Document
