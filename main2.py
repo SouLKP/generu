@@ -522,10 +522,10 @@ os.makedirs(path_2,exist_ok=True)
 
 
 
-# with st.sidebar.form(key='pdf_upload_form', clear_on_submit=True):
-#     resume1 = st.file_uploader("Choose Vendor's Resume", type=['docx', 'pdf'], key='p1')
-#     radio = st.radio(label="Select Resume Format", options=['code', 'web'], horizontal=True)
-#     submit_button = st.form_submit_button(label='Generate Resume', on_click=None)
+with st.sidebar.form(key='pdf_upload_form', clear_on_submit=True):
+    resume1 = st.file_uploader("Choose Vendor's Resume", type=['docx', 'pdf'], key='p1')
+    radio = st.radio(label="Select Resume Format", options=['code', 'web'], horizontal=True)
+    submit_button = st.form_submit_button(label='Generate Resume', on_click=None)
 
 # # if st.button("Generate Resume",type='primary'):
 # if submit_button:    
