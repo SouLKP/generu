@@ -110,7 +110,7 @@ load_dotenv()
 import os
 OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
 OPENAI_API_KEY = st.secrets["OPENAI_API_KEY"]
-
+st.write('op in chat')
 # def first_query_engine(directory_path):
 #     llm = OpenAI(temperature=0.1, model="gpt-3.5-turbo-16k", max_tokens=5000, timeout= 300) 
 #     service_context = ServiceContext.from_defaults(llm=llm) 
