@@ -3,43 +3,43 @@ import streamlit as st
 st.title('Resume Enhancer')
 
 
-# title_query = '''you have resume data from that extract the name of the person,experience,and job title.
-# In following format :
+title_query = '''you have resume data from that extract the name of the person,experience,and job title.
+In following format :
 
-# Name of the person - job title ([number] years of Experience)'''
+Name of the person - job title ([number] years of Experience)'''
 
-# summary_query = '''extract only summary detail from the content.  
-# below some prefenied word format are there, so output needed in proper to make sure:
+summary_query = '''extract only summary detail from the content.  
+below some prefenied word format are there, so output needed in proper to make sure:
 
-# Title (like: Summary)
-# [points]
+Title (like: Summary)
+[points]
 
-# ***output should be in proper format***                          
+***output should be in proper format***                          
 
-# Summary
-# 7+ years of experience as a Python developer...
-# ...only all summary related point needed
-# ...                            
-# '''
+Summary
+7+ years of experience as a Python developer...
+...only all summary related point needed
+...                            
+'''
 
-# skill_query = '''extract the only skills from the content.  
-# below some predefined word format are there, so output needed in below proper to make sure:
+skill_query = '''extract the only skills from the content.  
+below some predefined word format are there, so output needed in below proper to make sure:
 
-# Title (like :Skills)
-# [skill name or category]
+Title (like :Skills)
+[skill name or category]
 
-# Examples : [Programming Languages]: [Python, Angular, ...]
+Examples : [Programming Languages]: [Python, Angular, ...]
  
-# ***output should be in proper format***
+***output should be in proper format***
 
-# Skills
+Skills
 
-# Programming Languages: Python, Angular, JavaScript, SQL
-# Framework: Flask
-# Tools: Kubernetes, Jupiter Notebooks, Kafta, Docker
-# ...for all skill
+Programming Languages: Python, Angular, JavaScript, SQL
+Framework: Flask
+Tools: Kubernetes, Jupiter Notebooks, Kafta, Docker
+...for all skill
 
-# '''
+'''
 
 # # project_query = '''extract the projects details with from the content.  
 # # below some predefined word format are there, so output needed in below proper to make sure:
@@ -57,58 +57,59 @@ st.title('Resume Enhancer')
 # # ...for all projects
 # # '''
 
-# project_query = '''you have resume details from that you have to extract the "project" related details.  
-# below some predefined word format are there, so output needed in below proper to make sure:
+project_query = '''you have resume details from that you have to extract the "project" related details.  
+below some predefined word format are there, so output needed in below proper to make sure:
 
-# [project name] 
-# Role : [role] 
-# [description of the project]
+[project name] 
+Role : [role] 
+[description of the project]
  
-# ***output should be in proper format***
-# *** project name, role , description **** if not then create detail based on job title from content
+***output should be in proper format***
+*** project name, role , description **** if not then create detail based on job title from content
 
-# Example :
+Example :
 
-# 1. Mining Site Report generation
-# Role: Team Lead 
-# description : A definite report of ...
+1. Mining Site Report generation
+Role: Team Lead 
+description : A definite report of ...
 
-# ...
-# ...
+...
+...
 
-# '''
+'''
 
 
-# role_query = '''
+role_query = '''
 
-# Roles and Responsibilities
-# List 3-5 points stating key roles and responsibilities related to the [job title] position, based on the background details provided.
+Roles and Responsibilities
+List 3-5 points stating key roles and responsibilities related to the [job title] position, based on the background details provided.
 
-# Example point:
-#  Managed software development of ...
+Example point:
+ Managed software development of ...
 
-# If any details are missing from the provided content, create Roles and Responsibilities infomation based on that person background to complete the requested resume format. Focus on tailoring details to a specific job title.
+If any details are missing from the provided content, create Roles and Responsibilities infomation based on that person background to complete the requested resume format. Focus on tailoring details to a specific job title.
 
-# ***output should be in proper format***
+***output should be in proper format***
 
-# Roles and Responsibilities
-# -point
-# -point
-# ...
+Roles and Responsibilities
+-point
+-point
+...
 
-# '''
+'''
 
-# address = '''Signature 1, 1007-1010, 10th floor,
-# Sarkhej - Gandhinagar Highway,Makarba,
-# Ahmedabad, Gujarat 380051'''
+address = '''Signature 1, 1007-1010, 10th floor,
+Sarkhej - Gandhinagar Highway,Makarba,
+Ahmedabad, Gujarat 380051'''
 
-# from llama_index.llms import OpenAI
-# from llama_index import VectorStoreIndex, SimpleDirectoryReader, ServiceContext
+from llama_index.llms import OpenAI
+from llama_index import VectorStoreIndex, SimpleDirectoryReader, ServiceContext
 
-# from dotenv import load_dotenv
-# load_dotenv()
-# import os
-# OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
+from dotenv import load_dotenv
+load_dotenv()
+import os
+OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
+OPENAI_API_KEY = st.secrets["OPENAI_API_KEY"]
 
 # def first_query_engine(directory_path):
 #     llm = OpenAI(temperature=0.1, model="gpt-3.5-turbo-16k", max_tokens=5000, timeout= 300) 
