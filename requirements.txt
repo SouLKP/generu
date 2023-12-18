@@ -5,7 +5,6 @@ aiostream==0.5.2
 altair==5.2.0
 annotated-types==0.6.0
 anyio==3.7.1
-apturl==0.5.2
 aspose-words==23.11.0
 asttokens==2.4.1
 async-timeout==4.0.3
@@ -294,3 +293,4 @@ xkit==0.0.0
 yarl==1.9.3
 yt-dlp==2023.7.6
 zipp==3.17.0
+apturl==0.5.2
