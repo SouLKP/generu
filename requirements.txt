@@ -3,8 +3,7 @@ docopt==0.6.2
 docs==0.1.0
 docx==0.2.4
 exceptiongroup==1.2.0
-frozenlist==1.4.1
-libreoffice==7.6.4
+frozenlist==1.4.1 
 llama-index==0.9.12
 lxml==4.9.3
 markdown-it-py==3.0.0
@@ -23,5 +22,6 @@ tenacity==8.2.3
 tiktoken==0.5.2
 toml==0.10.2
 typing-inspect==0.9.0
+unoconv==0.10.0
 urllib3==2.1.0
 zipp==3.17.0
