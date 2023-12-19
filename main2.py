@@ -501,25 +501,25 @@ if os.path.exists(path_2):
 # input_file = os.path.join('/home/webclues/Music/HR_Gen_3/dataset1/output','final_resume.docx')
 # output_dir = os.path.join('/home/webclues/Music/HR_Gen_3/dataset1/output')  
 
-# if 'allow1' not in st.session_state:
-#     st.session_state.allow1 = False
+if 'allow1' not in st.session_state:
+    st.session_state.allow1 = False
 
-# if 'allow2' not in st.session_state:
-#     st.session_state.allow2 = False
+if 'allow2' not in st.session_state:
+    st.session_state.allow2 = False
 
-# if 'directory_path' not in st.session_state:
-#     st.session_state.directory_path = False
+if 'directory_path' not in st.session_state:
+    st.session_state.directory_path = False
 
-# # resume1 = st.file_uploader("Choose Vendor's Resume", type=['docx', 'pdf'], key='p1')
-# # radio = st.radio(label="Select Resume Format",options=['code','web'],horizontal=False)
+# resume1 = st.file_uploader("Choose Vendor's Resume", type=['docx', 'pdf'], key='p1')
+# radio = st.radio(label="Select Resume Format",options=['code','web'],horizontal=False)
 
 
-# def updated_skill(skill_text):
-#     from openai import OpenAI
-#     client = OpenAI()
-#     response = client.chat.completions.create(model="gpt-4",messages=[{"role": "system", "content": "You are a intelligent coder assistant."},
-#     {"role": "user", "content": f"understand this skill details : {skill_text}.understand skills details and based on that make two columns for main category and right side subcategory needed.output two column sperate wtih '|' "}])
-#     return response.choices[0].message.content
+def updated_skill(skill_text):
+    from openai import OpenAI
+    client = OpenAI()
+    response = client.chat.completions.create(model="gpt-4",messages=[{"role": "system", "content": "You are a intelligent coder assistant."},
+    {"role": "user", "content": f"understand this skill details : {skill_text}.understand skills details and based on that make two columns for main category and right side subcategory needed.output two column sperate wtih '|' "}])
+    return response.choices[0].message.content
 
 def engine_query(query1,engine):
     response = engine.query(query1)
@@ -549,11 +549,11 @@ if submit_button:
             st.write("file stored")
         st.write("content",'data!!!!!!!!!!!!!!!!!!')
         engine = first_query_engine(directory_path)
-        q1 = engine_query(title_query,engine)
-        st.write(q1)
+        # q1 = engine_query(title_query,engine)
+        # st.write(q1)
 
-#         st.session_state.allow1 = True
-#         st.session_state.allow2 = True 
+        st.session_state.allow1 = True
+        st.session_state.allow2 = True 
 
 #         # Example usage
 #         file_path = '/home/webclues/Music/HR_Gen_3/dataset1/output/final_resume.docx'
@@ -561,20 +561,25 @@ if submit_button:
 #         input_file = os.path.join('/home/webclues/Music/HR_Gen_3/dataset1/output','final_resume.docx')
 #         output_dir = os.path.join('/home/webclues/Music/HR_Gen_3/dataset1/output')  
 
-#         title = engine_query(title_query,engine)
-#         summary = engine_query(summary_query,engine)
-#         skill_text = engine_query(skill_query,engine)
-#         skill = updated_skill(skill_text)
-#         role = engine_query(role_query,engine)
-#         projects_string = engine_query(project_query,engine)
-#         # st.write(projects_string)
+        title = engine_query(title_query,engine)
+        st.write(title)
+        summary = engine_query(summary_query,engine)
+        st.write(summary)
+        skill_text = engine_query(skill_query,engine)
+        st.write(skill_text)
+        skill = updated_skill(skill_text)
+        st.write(skill)
+        role = engine_query(role_query,engine)
+        st.write(role)
+        projects_string = engine_query(project_query,engine)
+        st.write(projects_string)
 
-#         role = role.replace('-','')
-#         summary = summary.replace('●','')
+        role = role.replace('-','')
+        summary = summary.replace('●','')
           
-#         create_summary_docx(title, address, summary, skill, role, projects_string,file_path,resume_format = radio)
-#         convert_to_pdf(input_file, output_dir)
-#         st.session_state.directory_path = True
+        # create_summary_docx(title, address, summary, skill, role, projects_string,file_path,resume_format = radio)
+        # convert_to_pdf(input_file, output_dir)
+        # st.session_state.directory_path = True
     
 
 # file_path1 = '/home/webclues/Music/HR_Gen_3/dataset1/output/final_resume.pdf'
