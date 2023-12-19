@@ -549,7 +549,7 @@ if submit_button:
             st.write("file stored")
         st.write("content",'data!!!!!!!!!!!!!!!!!!')
         engine = first_query_engine(directory_path)
-        q1 = engine_query("Etract the all detail",engine)
+        q1 = engine_query(title_query,engine)
         st.write(q1)
 
 #         st.session_state.allow1 = True
