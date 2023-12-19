@@ -296,7 +296,7 @@ from docx.oxml import OxmlElement
 
 def create_summary_docx(title,address,summary,skill,role,projects_string,file_path,resume_format): 
         if resume_format == 'web':
-            filename = '/home/webclues/Documents/webclues_logo.png'
+            filename = 'webclues_logo.png'
             width = Cm(7.30)
             height = Cm(1.25)
             #title color
@@ -306,7 +306,7 @@ def create_summary_docx(title,address,summary,skill,role,projects_string,file_pa
             #address,summary,skiil,role color
             color = RGBColor(0,0,254)
         else:
-            filename = '/home/webclues/Documents/clog.png'
+            filename = 'clog.png'
             width = Cm(5.44)
             height = Cm(0.69)
             address_name = 'CodeZeros'
