@@ -2,6 +2,7 @@ async-timeout==4.0.3
 docopt==0.6.2
 docs==0.1.0
 docx==0.2.4
+docx2text==0.2.4
 exceptiongroup==1.2.0
 frozenlist==1.4.1 
 llama-index==0.9.12
