@@ -533,10 +533,13 @@ if submit_button:
         directory_path = os.path.join(path_1,resume1.name)
         st.write(directory_path)
         os.makedirs(directory_path,exist_ok=True)
+        if os.path.exists(directory_path):
+            st.write(directory_path)
         file_path = os.path.join(directory_path,resume1.name)
 #         st.session_state.directory_path = directory_path
         with open(file_path, "wb") as f:
             f.write(resume1.getbuffer())
+            st.write("file stored")
         # engine = first_query_engine(directory_path)
         # st.write(engine.query("Etract the all detail"))
 
