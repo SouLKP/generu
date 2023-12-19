@@ -120,16 +120,16 @@ def first_query_engine(directory_path):
 
 import shutil
 current_path = os.getcwd()
-st.write(current_path,"current path")
+# st.write(current_path,"current path")
 path_1 = os.path.join(current_path, 'resume_enhancer1')
 path_2 = os.path.join(current_path,'output')
 os.makedirs(path_1, exist_ok=True)
 os.makedirs(path_2,exist_ok=True)
 
-if os.path.exists(path_1):
-    st.write(path_1,"resume path")
-if os.path.exists(path_2):
-    st.write(path_2,"output file")
+# if os.path.exists(path_1):
+#     st.write(path_1,"resume path")
+# if os.path.exists(path_2):
+#     st.write(path_2,"output file")
 
 # full_path = os.path.join(save_path, resume1.name)
 
@@ -492,7 +492,7 @@ def create_summary_docx(title,address,summary,skill,role,projects_string,file_pa
         create_document_with_projects(projects_string,file_path)
         return True
 
-import subprocess
+# import subprocess
 
 # def convert_to_pdf(input_file, output_dir):
 #     subprocess.run(['libreoffice', '--headless', '--convert-to', 'pdf', input_file, '--outdir', output_dir])
@@ -537,20 +537,17 @@ if submit_button:
     if resume1 is not None:
         directory_path = os.path.join(path_1,resume1.name)
         os.makedirs(directory_path,exist_ok=True)
-        if os.path.exists(directory_path):
-            st.write(directory_path,"directory path done")
+        # if os.path.exists(directory_path):
+            # st.write(directory_path,"directory path done")
         file_path = os.path.join(directory_path,resume1.name)
         # st.session_state.directory_path = directory_path
-        st.write(file_path,"file path done")
+        # st.write(file_path,"file path done")
         with open(file_path, "wb") as f:
             f.write(resume1.getbuffer())
             f.close()
-        if os.path.exists(file_path):
-            st.write("file stored")
-        st.write("content",'data!!!!!!!!!!!!!!!!!!')
+        # if os.path.exists(file_path):
+            # st.write("file stored")
         engine = first_query_engine(directory_path)
-        # q1 = engine_query(title_query,engine)
-        # st.write(q1)
 
         st.session_state.allow1 = True
         st.session_state.allow2 = True 
@@ -562,25 +559,17 @@ if submit_button:
         output_dir = os.path.join(path_2)  
 
         title = engine_query(title_query,engine)
-        st.write("title !!!")
         summary = engine_query(summary_query,engine)
-        st.write("summary !!!")
         skill_text = engine_query(skill_query,engine)
-        st.write("skill_text !!!")
         skill = updated_skill(skill_text)
-        st.write("skill !!!")
         role = engine_query(role_query,engine)
-        st.write("role !!!")
         projects_string = engine_query(project_query,engine)
-        st.write("projects_string !!!")
 
         role = role.replace('-','')
         summary = summary.replace('●','')
           
         create_summary_docx(title, address, summary, skill, role, projects_string,file_path,resume_format = radio)
-        st.write("create_summary_docx !!")
         # convert_to_pdf(input_file, output_dir)
-        st.write("converted !!")
         st.session_state.directory_path = True
     
 
