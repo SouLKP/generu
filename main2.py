@@ -521,9 +521,9 @@ if os.path.exists(path_2):
 #     {"role": "user", "content": f"understand this skill details : {skill_text}.understand skills details and based on that make two columns for main category and right side subcategory needed.output two column sperate wtih '|' "}])
 #     return response.choices[0].message.content
 
-# def engine_query(query1,engine):
-#     response = engine.query(query1)
-#     return response.response
+def engine_query(query1,engine):
+    response = engine.query(query1)
+    return response.response
 
 
 
@@ -549,8 +549,8 @@ if submit_button:
             st.write("file stored")
         st.write("content",'data!!!!!!!!!!!!!!!!!!')
         engine = first_query_engine(directory_path)
-        q1 = engine.query("Etract the all detail")
-        st.write(q1.response)
+        q1 = engine_query("Etract the all detail",engine)
+        st.write(q1)
 
 #         st.session_state.allow1 = True
 #         st.session_state.allow2 = True 
