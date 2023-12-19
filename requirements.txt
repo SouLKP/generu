@@ -4,7 +4,7 @@ docs==0.1.0
 docx==0.2.4
 exceptiongroup==1.2.0
 frozenlist==1.4.1
-libreoffice
+libreoffice==7.6.4
 llama-index==0.9.12
 lxml==4.9.3
 markdown-it-py==3.0.0
