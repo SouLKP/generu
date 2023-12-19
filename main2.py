@@ -494,9 +494,9 @@ def create_summary_docx(title,address,summary,skill,role,projects_string,file_pa
 
 import subprocess
 
-def convert_to_pdf(input_file, output_dir):
-    subprocess.run(['libreoffice', '--headless', '--convert-to', 'pdf', input_file, '--outdir', output_dir])
-    return True
+# def convert_to_pdf(input_file, output_dir):
+#     subprocess.run(['libreoffice', '--headless', '--convert-to', 'pdf', input_file, '--outdir', output_dir])
+#     return True
 
 # input_file = os.path.join('/home/webclues/Music/HR_Gen_3/dataset1/output','final_resume.docx')
 # output_dir = os.path.join('/home/webclues/Music/HR_Gen_3/dataset1/output')  
@@ -579,19 +579,19 @@ if submit_button:
           
         create_summary_docx(title, address, summary, skill, role, projects_string,file_path,resume_format = radio)
         st.write("create_summary_docx !!")
-        convert_to_pdf(input_file, output_dir)
+        # convert_to_pdf(input_file, output_dir)
         st.write("converted !!")
         st.session_state.directory_path = True
     
 
-file_path1 = os.path.join(path_2,'final_resume.pdf')
+# file_path1 = os.path.join(path_2,'final_resume.pdf')
 file_path2 = os.path.join(path_2,'final_resume.docx')
  
-if st.session_state.directory_path == True:
-    if st.session_state.allow1 == True:
-        with open(file_path1, "rb") as file:
-            if st.download_button(label="Download Document PDF", data=file, file_name="document.pdf", mime="application/pdf"):
-                st.session_state.allow1 = False
+# if st.session_state.directory_path == True:
+#     if st.session_state.allow1 == True:
+#         with open(file_path1, "rb") as file:
+#             if st.download_button(label="Download Document PDF", data=file, file_name="document.pdf", mime="application/pdf"):
+#                 st.session_state.allow1 = False
 
 if st.session_state.directory_path == True:
     if st.session_state.allow2 == True:
