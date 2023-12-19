@@ -120,11 +120,16 @@ def first_query_engine(directory_path):
 
 import shutil
 current_path = os.getcwd()
-st.write(current_path)
+st.write(current_path,"current path")
 path_1 = os.path.join(current_path, 'resume_enhancer1')
 path_2 = os.path.join(current_path,'output')
 os.makedirs(path_1, exist_ok=True)
 os.makedirs(path_2,exist_ok=True)
+
+if os.path.exists(path_1):
+    st.write(path_1,"resume path")
+if os.path.exists(path_2):
+    st.write(path_2,"output file")
 
 # full_path = os.path.join(save_path, resume1.name)
 
@@ -531,15 +536,16 @@ with st.sidebar.form(key='pdf_upload_form', clear_on_submit=True):
 if submit_button:    
     if resume1 is not None:
         directory_path = os.path.join(path_1,resume1.name)
-        st.write(directory_path)
         os.makedirs(directory_path,exist_ok=True)
         if os.path.exists(directory_path):
-            st.write(directory_path)
+            st.write(directory_path,"directory path done")
         file_path = os.path.join(directory_path,resume1.name)
-#         st.session_state.directory_path = directory_path
+        # st.session_state.directory_path = directory_path
+        st.write(file_path,"file path done")
         with open(file_path, "wb") as f:
             f.write(resume1.getbuffer())
-            st.write("file stored")
+            f.close()
+        st.write("file stored")
         # engine = first_query_engine(directory_path)
         # st.write(engine.query("Etract the all detail"))
 
