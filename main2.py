@@ -556,29 +556,31 @@ if submit_button:
         st.session_state.allow2 = True 
 
 #         # Example usage
-#         file_path = '/home/webclues/Music/HR_Gen_3/dataset1/output/final_resume.docx'
+        file_path = os.path.join(path_2,'final_resume.docx')
 #         dataset_path = '/home/webclues/Music/HR_Gen_3/dataset1/resume_enhancer2'
         input_file = os.path.join(path_2,'final_resume.docx')
         output_dir = os.path.join(path_2)  
 
         title = engine_query(title_query,engine)
-        st.write(title)
+        st.write("title !!!")
         summary = engine_query(summary_query,engine)
-        st.write(summary)
+        st.write("summary !!!")
         skill_text = engine_query(skill_query,engine)
-        st.write(skill_text)
+        st.write("skill_text !!!")
         skill = updated_skill(skill_text)
-        st.write(skill)
+        st.write("skill !!!")
         role = engine_query(role_query,engine)
-        st.write(role)
+        st.write("role !!!")
         projects_string = engine_query(project_query,engine)
-        st.write(projects_string)
+        st.write("projects_string !!!")
 
         role = role.replace('-','')
         summary = summary.replace('●','')
           
         create_summary_docx(title, address, summary, skill, role, projects_string,file_path,resume_format = radio)
+        st.write("create_summary_docx !!")
         convert_to_pdf(input_file, output_dir)
+        st.write("converted !!")
         st.session_state.directory_path = True
     
 
