@@ -545,10 +545,9 @@ if submit_button:
         with open(file_path, "wb") as f:
             f.write(resume1.getbuffer())
             f.close()
-        with open(file_path,'r') as f:
-            content = f.read()
-        st.write("file stored")
-        st.write(content,'data!!!!!!!!!!!!!!!!!!')
+        if os.path.exists(file_path):
+            st.write("file stored")
+        st.write("content",'data!!!!!!!!!!!!!!!!!!')
         # engine = first_query_engine(directory_path)
         # st.write(engine.query("Etract the all detail"))
 
