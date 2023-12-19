@@ -22,6 +22,5 @@ tenacity==8.2.3
 tiktoken==0.5.2
 toml==0.10.2
 typing-inspect==0.9.0
-unoconv==0.10.0
 urllib3==2.1.0
 zipp==3.17.0
