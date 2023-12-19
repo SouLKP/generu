@@ -1,7 +1,6 @@
 async-timeout==4.0.3
 
 
-doc2text
 docopt==0.6.2
 docs==0.1.0
 docx==0.2.4

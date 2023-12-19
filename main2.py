@@ -537,8 +537,8 @@ if submit_button:
 #         st.session_state.directory_path = directory_path
         with open(file_path, "wb") as f:
             f.write(resume1.getbuffer())
-        engine = first_query_engine(directory_path)
-        st.write(engine_query("enter detail",directory_path))
+        # engine = first_query_engine(directory_path)
+        # st.write(engine.query("Etract the all detail"))
 
 #         st.session_state.allow1 = True
 #         st.session_state.allow2 = True 
